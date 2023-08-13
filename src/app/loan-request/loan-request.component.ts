@@ -19,13 +19,6 @@ export class LoanRequestComponent {
     this.loanRequestForm = this.createFormGroup();
   }
 
-  ngOnInit(): void {
-
-  }
-
-  ngOnDestroy(): void {
-  }
-
   public onSubmitRegisterForm() {
     const loanRequestObj = this.loanRequestForm.getRawValue();
     this.response = null;

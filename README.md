@@ -11,6 +11,8 @@ Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The appl
 username - inbank 
 password - inbank@123
 
+valid personal codes for account - 49002010965 , 49002010976, 49002010987, 49002010998 , 49002010999
+
 1. User Login Page
    - Once user visit http://localhost:4200, user login screen can be viewed
    - Please use given username and password for logging in to the system

@@ -8,19 +8,13 @@ import { AuthService } from '../authentication.service';
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.scss']
 })
-export class UserLoginComponent implements OnInit, OnDestroy {
+export class UserLoginComponent {
 
   public userLoginForm: FormGroup;
   public errorMessage:string ="";
   constructor(private router: Router,
     private authService: AuthService) {
     this.userLoginForm = this.createFormGroup();
-  }
-
-  ngOnInit(): void {
-  }
-
-  ngOnDestroy(): void {
   }
 
   public onSubmitLoginForm() {
