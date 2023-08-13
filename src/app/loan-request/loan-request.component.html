@@ -1,0 +1,46 @@
+<div class="row">
+  <form [formGroup]="loanRequestForm" (ngSubmit)="onSubmitRegisterForm()">
+    <div class="registrationWrapper">
+      <h1> Loan Request Form </h1>
+    </div>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <div class="personalCode">
+      <label for="personalCode">Personal Code :</label>
+      <input type="text" id="personalCode" formControlName="personalCode" required>
+      <div class="invalid-feedback"
+           *ngIf="loanRequestForm.controls['personalCode'].invalid && loanRequestForm.controls['personalCode'].touched">
+        personal Code is required.
+      </div>
+    </div>
+
+    <div>
+      <label for="loanAmount">Loan Amount :</label>
+      <input type="number" id="loanAmount" formControlName="loanAmount" required>
+      <div class="invalid-feedback"
+           *ngIf="loanRequestForm.controls['loanAmount'].invalid && loanRequestForm.controls['loanAmount'].touched">
+        Loan amount is required.
+      </div>
+    </div>
+    <div>
+      <label for="loanPeriod">Loan Period :</label>
+      <input type="number" id="loanPeriod" formControlName="loanPeriod" required>
+      <div class="invalid-feedback"
+           *ngIf="loanRequestForm.controls['loanPeriod'].invalid && loanRequestForm.controls['loanPeriod'].touched">
+        Loan Period is required.
+      </div>
+    </div>
+    <div class="submitButton">
+      <button type="submit" [disabled]="loanRequestForm.invalid">Submit</button>
+    </div>
+
+    <div *ngIf="response">
+      <div>
+        <label>Loan Decision : {{ response.decision }}</label>
+      </div>
+      <div>
+        <label >Approved Amount : {{ response.loanAmount }}</label>
+      </div>
+
+    </div>
+  </form>
+  <div>
